@@ -26,20 +26,30 @@ public class TestClass extends BaseTest {
     }
 
     @Test(priority = 3)
-    public void selectvideoItems() throws InterruptedException {
+    public void selectvideoItems() {
         VideoGamesPage videoGamesPage = new VideoGamesPage(driver);
-        NavigationBar navigationBar = new NavigationBar(driver);
-        CheckOutPage checkOutPage = new CheckOutPage(driver);
-        CartPage cartPage = new CartPage(driver);
         videoGamesPage.selectFreeShipping();
         videoGamesPage.selectCondition(conditionTypeNew);
         videoGamesPage.sortBy(sortByHighToLow);
         videoGamesPage.selectProductsBelow15K();
+    }
+
+    @Test(priority = 4)
+    public void checkItemsInCartPage() throws InterruptedException {
+
+        NavigationBar navigationBar = new NavigationBar(driver);
+        CartPage cartPage = new CartPage(driver);
         navigationBar.goToCartPage();
         cartPage.CompareNames();
         cartPage.getTotalAmount();
         cartPage.clickOnProceedToBuyButton();
+    }
+
+    @Test(priority = 5)
+    public void verifyCheckOutPage() {
+        CheckOutPage checkOutPage = new CheckOutPage(driver);
         checkOutPage.selectPayByValuPaymentMethod();
         checkOutPage.checkOrderTotalValue();
     }
+
 }
