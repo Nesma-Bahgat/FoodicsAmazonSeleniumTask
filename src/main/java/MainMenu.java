@@ -29,8 +29,7 @@ public class MainMenu extends BasePage {
     }
 
     public void selectSubMenuItem(String itemName) {
-                WebElement menuItem = driver.findElement(By.xpath("//a[text()='" + itemName + "']"));
-
+        WebElement menuItem = driver.findElement(By.xpath("//a[text()='" + itemName + "']"));
         clickElementByJS(menuItem);
     }
 
