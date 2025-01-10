@@ -89,3 +89,4 @@ public class VideoGamesPage extends BasePage {
         }
         System.out.println("Selected Items:" + BasePage.selectedNames);
     }
+}
