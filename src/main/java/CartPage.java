@@ -41,10 +41,9 @@ public class CartPage extends BasePage {
         BasePage.totalAmount = Integer.parseInt(priceText);
     }
 
-    public void CompareNames() throws InterruptedException {
+    public void CompareNames() {
         cartProductNames = new ArrayList();
 
-        Thread.sleep(3000);
         wait.until(ExpectedConditions.visibilityOfAllElements(productsList));
 
         for (WebElement div : productsList) {
@@ -52,12 +51,11 @@ public class CartPage extends BasePage {
             WebElement name = div.findElement(By.xpath(".//h4//span"));
 
             String productName = name.getText();
-            //String productName = (String) ((JavascriptExecutor) driver).executeScript("return arguments[0].textContent;", name);
 
             if (productName.length() > 150) {
                 productName = productName.substring(0, 150);
             }
-            
+
             cartProductNames.add(productName);
         }
 
@@ -78,7 +76,7 @@ public class CartPage extends BasePage {
 
     public void clickOnProceedToBuyButton() {
         scrollToTheTopOfThePage();
-        proccedToBuyButton.click();
+       wait.until(ExpectedConditions.elementToBeClickable(proccedToBuyButton)).click();
     }
 
 }
