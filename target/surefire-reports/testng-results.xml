@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-01-10T02:23:07 EET" name="TestClass" finished-at="2025-01-10T02:23:35 EET" duration-ms="28010">
+    <groups>
+    </groups>
+    <test started-at="2025-01-10T02:23:07 EET" name="Command line test" finished-at="2025-01-10T02:23:35 EET" duration-ms="28010">
+      <class name="TestClass">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:TestClass@7f9fcf7f]" started-at="2025-01-10T02:23:07 EET" name="setUp" finished-at="2025-01-10T02:23:09 EET" duration-ms="2249" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginToAmazon()[pri:1, instance:TestClass@7f9fcf7f]" started-at="2025-01-10T02:23:09 EET" name="loginToAmazon" finished-at="2025-01-10T02:23:11 EET" duration-ms="1766" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToAmazon -->
+        <test-method signature="navigateToVideoGamesPage()[pri:2, instance:TestClass@7f9fcf7f]" started-at="2025-01-10T02:23:11 EET" name="navigateToVideoGamesPage" finished-at="2025-01-10T02:23:15 EET" duration-ms="3928" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToVideoGamesPage -->
+        <test-method signature="selectvideoItems()[pri:3, instance:TestClass@7f9fcf7f]" started-at="2025-01-10T02:23:15 EET" name="selectvideoItems" finished-at="2025-01-10T02:23:35 EET" duration-ms="20043" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectvideoItems -->
+      </class> <!-- TestClass -->
+    </test> <!-- Command line test -->
+  </suite> <!-- TestClass -->
+</testng-results>
