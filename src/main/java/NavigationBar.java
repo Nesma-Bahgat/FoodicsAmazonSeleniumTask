@@ -16,7 +16,8 @@ public class NavigationBar extends BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10000));
     }
 
-    public void goToCartPage() {
+    public void goToCartPage() throws InterruptedException {
+        Thread.sleep(2000);
         scrollToTheTopOfThePage();
         wait.until(ExpectedConditions.elementToBeClickable(cartButton)).click();
     }
