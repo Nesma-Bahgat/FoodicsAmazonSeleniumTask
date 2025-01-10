@@ -14,12 +14,6 @@ import org.testng.Assert;
 
 public class CartPage extends BasePage {
 
-    @FindBy(xpath = "//span[@class='a-truncate-cut']")
-    WebElement productName;
-
-    @FindBy(xpath = "//span[@class='a-price a-text-price sc-product-price sc-white-space-nowrap a-size-medium']//span[2]")
-    WebElement productPrice;
-
     @FindBy(id = "sc-subtotal-amount-activecart")
     WebElement totalPrice;
 
