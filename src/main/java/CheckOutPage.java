@@ -28,13 +28,13 @@ public class CheckOutPage extends BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10000));
     }
 
-    public void selectPayByValuPaymentMethod() throws InterruptedException {
+    public void selectPayByValuPaymentMethod() {
         wait.until(ExpectedConditions.elementToBeClickable(payByValuRadiobutton.get(1))).click();
     }
 
-    public int getShippingfees() throws InterruptedException {
-       Thread.sleep(5000);
-               String shippingFeesText = shippingFeesSection.findElement(By.xpath("//span[@class='aok-nowrap a-nowrap']")).getText();
+    public int getShippingfees(){
+        wait.until(ExpectedConditions.visibilityOf(shippingFeesSection));
+        String shippingFeesText = shippingFeesSection.findElement(By.xpath("//span[@class='aok-nowrap a-nowrap']")).getText();
         if (shippingFeesText.contains("--")) {
             return 0;
         }
@@ -54,11 +54,11 @@ public class CheckOutPage extends BasePage {
     public int getOrderTotalValue() {
         WebElement orderTotalElement = orderTotalSection.findElement(By.xpath(".//div[@class='order-summary-line-definition']"));
         String orderTotalText = orderTotalElement.getText().replaceAll("[^\\d]", "");
-        System.out.println("Current Order Total: "+ orderTotalText);
+        System.out.println("Current Order Total: " + orderTotalText);
         return Integer.parseInt(orderTotalText);
     }
 
-    public void checkOrderTotalValue() throws InterruptedException {
+    public void checkOrderTotalValue(){
         int orderTotalValue = BasePage.totalAmount + getShippingfees() - getFreeDeliverValue();
         System.out.println("Calculated Order Total:" + orderTotalValue);
         Assert.assertEquals(orderTotalValue, getOrderTotalValue());
