@@ -57,7 +57,7 @@ public class VideoGamesPage extends BasePage {
         outsideElement.click();
     }
 
-    public void selectProductsBelow15K() throws InterruptedException {
+    public void selectProductsBelow15K() {
         BasePage.selectedNames = new ArrayList<>();
         wait.until(ExpectedConditions.visibilityOfAllElements(productsListWithButtons));
         System.out.println("List has : " + productsListWithButtons.size() + " Elements");
@@ -78,8 +78,9 @@ public class VideoGamesPage extends BasePage {
                     System.out.println("Price: " + priceText + " selected");
 
                     WebElement name = div.findElement(By.xpath(".//h2//span"));
-                    Thread.sleep(1000);
 
+                    String productName = name.getText();
+                    BasePage.selectedNames.add(productName);
                 }
             } catch (Exception e) {
                 // Handle cases where price parsing fails or "Add to Cart" is not available
@@ -88,4 +89,3 @@ public class VideoGamesPage extends BasePage {
         }
         System.out.println("Selected Items:" + BasePage.selectedNames);
     }
-}
